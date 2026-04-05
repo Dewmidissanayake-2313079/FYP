@@ -1,0 +1,129 @@
+# Demographic-Aware Outfit Recommendation System - Configuration
+# Standardized for Research Submission
+
+paths:
+  yolo_weights: "E:/4 year/IRP/FYP/runs/yolov8m_fashion5/weights/best.pt"
+  gat_weights: "E:/4 year/IRP/FYP/ML models/gat_model_with_age.pt"
+  dataset_path: "E:/4 year/IRP/FYP/Datasets/dataset_with_age_survey_based.csv"
+  metadata_path: "E:/4 year/IRP/FYP/features/item_metadata.csv"
+  clip_feat_path: "E:/4 year/IRP/FYP/features/clip_features.npy"
+  image_dir: "E:/4 year/IRP/FYP/DeepFashion Dataset/images"
+  crops_dir: "E:/4 year/IRP/FYP/features/crops"
+  outfit_emb_path: "E:/4 year/IRP/FYP/ML models/gat_outfit_embeddings.npy"
+  item_emb_path: "E:/4 year/IRP/FYP/ML models/gat_item_embeddings.npy"
+  wears_edges_path: "E:/4 year/IRP/FYP/ML models/gat_wears_edges.npy"
+
+model:
+  hidden_dim: 128
+  embed_dim: 64
+  num_layers: 2
+  num_heads: 4
+  dropout: 0.3
+  attn_dropout: 0.1
+
+parameters:
+  top_k: 10
+  similar_count: 10
+  complement_count: 3
+  accessory_count: 4
+  yolo_conf: 0.25
+  clip_rerank_pool: 150
+
+weights:
+  similar:
+    clip: 0.35
+    gnn: 0.30
+    demo: 0.25
+    label: 0.10
+  complementary:
+    clip: 0.20
+    gnn: 0.45
+    demo: 0.25
+    label: 0.10
+  accessory:
+    clip: 0.30
+    gnn: 0.35
+    demo: 0.25
+    label: 0.10
+
+mappings:
+  age_group_map:
+    teen: "16-20"
+    young: "21-25"
+    adult: "26-30"
+    mature: "31-40"
+
+  demo_to_image_cat:
+    top: "top"
+    pants: "pants"
+    skirt: "skirt"
+    dress: "dress"
+    leggings: "leggings"
+    rompers: "rompers"
+    jacket: "outer"
+    blazer: "outer"
+    coat: "outer"
+    cardigan: "outer"
+    vest_waistcoat: "outer"
+
+  occasion_categories:
+    Party: ["dress", "skirt", "rompers", "top", "footwear", "bag", "necklace", "wrist_wearing"]
+    Prom: ["dress", "skirt", "footwear", "bag", "necklace"]
+    Wedding: ["dress", "skirt", "footwear", "bag", "necklace"]
+    Office: ["top", "pants", "skirt", "outer", "footwear", "bag", "belt"]
+    Dating: ["dress", "skirt", "top", "pants", "rompers", "footwear", "bag", "necklace"]
+    Travel: ["top", "pants", "outer", "footwear", "bag"]
+    Sports: ["top", "pants", "leggings", "footwear", "socks"]
+
+  accessory_cats:
+    - "footwear"
+    - "bag"
+    - "belt"
+    - "wrist_wearing"
+    - "necklace"
+    - "ring"
+    - "socks"
+    - "eyeglass"
+    - "headwear"
+
+  image_name_to_category:
+    Dresses: "dress"
+    Rompers_Jumpsuits: "rompers"
+    Skirts: "skirt"
+    Pants: "pants"
+    Jeans: "pants"
+    Shorts: "pants"
+    Leggings: "leggings"
+    Tees_Tanks: "top"
+    Blouses_Shirts: "top"
+    Shirts_Polos: "top"
+    Sweaters: "top"
+    Graphic_Tees: "top"
+    Sweatshirts_Hoodies: "outer"
+    Jackets_Coats: "outer"
+    Jackets_Vests: "outer"
+    Cardigans: "outer"
+    Suiting: "outer"
+    Blazers: "outer"
+    Denim: "pants"
+    Shoes: "footwear"
+    Boots: "footwear"
+    Sandals: "footwear"
+    Sneakers: "footwear"
+    Bags: "bag"
+    Jewelry: "necklace"
+    Belts: "belt"
+    Hats: "headwear"
+    Sunglasses: "eyeglass"
+    Watches: "wrist_wearing"
+    Socks_Intimates: "socks"
+    Intimates: "top"
+
+  complement_map:
+    dress: ["dress", "top"]
+    top: ["pants", "skirt", "dress"]
+    pants: ["top", "outer"]
+    skirt: ["top", "outer"]
+    rompers: ["outer"]
+    leggings: ["top", "outer"]
+    outer: ["top", "dress", "pants"]
