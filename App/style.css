@@ -1,0 +1,294 @@
+/*  Full App Background  */
+.stApp {
+    background-image: var(--app-bg);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+}
+
+/*  Content Container (Glassmorphism)  */
+.main .block-container {
+    padding-top: 1.5rem;
+    max-width: 1300px;
+    background: rgba(255, 255, 255, 0.7);
+    /* Soft white overlay for readability */
+    backdrop-filter: blur(8px);
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/*  Instruction Cards  */
+.instruction-card {
+    background: white;
+    padding: 24px;
+    border-radius: 16px;
+    border: 1px solid #e9d8fd;
+    box-shadow: 0 10px 25px rgba(118, 75, 162, 0.1);
+    height: 100%;
+}
+
+.instruction-card h4 {
+    margin-top: 0 !important;
+    color: #4c1d95 !important;
+}
+
+/*  Hero Banner (Glassmorphism)  */
+.hero-header {
+    background: rgba(43, 31, 80, 0.35);
+    /* Semi-transparent purple */
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+    padding: 3.5rem 2rem;
+    border-radius: 30px;
+    text-align: center;
+    margin-bottom: 3rem;
+    border: 2px solid rgba(118, 75, 162, 0.4);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2),
+        inset 0 0 20px rgba(255, 255, 255, 0.05);
+}
+
+.hero-title {
+    color: white;
+    font-size: 4.2rem;
+    font-weight: 800;
+    margin-bottom: 0.2rem;
+    letter-spacing: -1.5px;
+    line-height: 1.1;
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.hero-subtitle {
+    color: #eaddff;
+    font-size: 1.35rem;
+    font-weight: 300;
+    letter-spacing: 0.8px;
+    opacity: 0.9;
+}
+
+/*  Instruction Cards (Beige Glass)  */
+.instruction-card {
+    background: rgba(252, 246, 233, 0.75);
+    /* Semi-transparent cream/beige */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 30px;
+    border-radius: 24px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+    height: 100%;
+}
+
+.instruction-card h4 {
+    margin-top: 0 !important;
+    color: #2d1b69 !important;
+    font-weight: 700 !important;
+    font-size: 1.5rem !important;
+}
+
+.instruction-card li,
+.instruction-card p {
+    color: #1a1a2e !important;
+    font-size: 1.05rem !important;
+    font-weight: 500 !important;
+    line-height: 1.6 !important;
+}
+
+/*  Content Container  */
+.main .block-container {
+    padding-top: 2rem;
+    max-width: 1400px;
+    background: transparent !important;
+    /* Allow wallpaper to be primary background */
+}
+
+/*  Sidebar  */
+section[data-testid="stSidebar"] {
+    background-color: #1a1a2e !important;
+    background-image: linear-gradient(180deg, #1a1a2e 0%, #16213e 100%) !important;
+    border-right: 1px solid rgba(118, 75, 162, 0.3);
+}
+
+section[data-testid="stSidebar"] [data-testid="stMarkdownContainer"] p {
+    color: #ffffff !important;
+    font-weight: 600 !important;
+    font-size: 1.1rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
+section[data-testid="stSidebar"] label {
+    color: #ffffff !important;
+    font-weight: 500 !important;
+    font-size: 0.85rem !important;
+}
+
+/*  Sidebar Headings  */
+section[data-testid="stSidebar"] h1,
+section[data-testid="stSidebar"] h2,
+section[data-testid="stSidebar"] h3 {
+    color: #ffffff !important;
+    text-align: center !important;
+}
+
+/*  File Uploader Text  */
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] p,
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] small,
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] span {
+    color: #ffffff !important;
+}
+
+/*  Form Inputs (Sidebar)  */
+section[data-testid="stSidebar"] .stSelectbox div[data-baseweb="select"] {
+    border-radius: 10px !important;
+    background-color: rgba(255, 255, 255, 0.03) !important;
+    border: 1.5px solid rgba(118, 75, 162, 0.3) !important;
+    color: white !important;
+}
+
+/*  File Uploader (Dashed)  */
+section[data-testid="stSidebar"] .stFileUploader {
+    padding-top: 1rem;
+}
+
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] {
+    border: 2px dashed rgba(118, 75, 162, 0.4) !important;
+    background-color: rgba(0, 0, 0, 0.2) !important;
+    border-radius: 12px !important;
+}
+
+section[data-testid="stSidebar"] [data-testid="stFileUploaderDropzone"] :first-child {
+    color: #b8b8d0 !important;
+}
+
+/*  Generate Recommendations Button  */
+section[data-testid="stSidebar"] .stButton>button {
+    background: linear-gradient(90deg, #667eea 0%, #764ba2 100%) !important;
+    color: white !important;
+    border-radius: 14px !important;
+    padding: 0.75rem 1rem !important;
+    font-weight: 700 !important;
+    font-size: 1rem !important;
+    margin-top: 2rem !important;
+    box-shadow: 0 8px 20px rgba(118, 75, 162, 0.3) !important;
+    border: none !important;
+}
+
+section[data-testid="stSidebar"] .stButton>button:hover {
+    box-shadow: 0 10px 25px rgba(118, 75, 162, 0.5) !important;
+    transform: scale(1.02);
+}
+
+/*  Section titles  */
+.section-title {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #2d1b69;
+    border-left: 5px solid #764ba2;
+    padding-left: 14px;
+    margin: 1.8rem 0 1.2rem;
+    line-height: 1.3;
+}
+
+/*  Category tag & score badge  */
+.category-tag {
+    display: inline-block;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+}
+
+.score-badge {
+    display: inline-block;
+    background: #f0fdf4;
+    color: #16a34a;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.72rem;
+    font-weight: 700;
+    margin-left: 6px;
+    border: 1px solid #bbf7d0;
+}
+
+/*  Multi-image info banner  */
+.multi-img-banner {
+    background: linear-gradient(135deg, #667eea18, #764ba218);
+    border: 1px solid #c4b5fd;
+    border-radius: 12px;
+    padding: 12px 18px;
+    margin: 0.5rem 0 1.2rem;
+    font-size: 0.92rem;
+    color: #4c1d95;
+    font-weight: 500;
+}
+
+/*  Buttons  */
+.stButton>button {
+    border-radius: 25px !important;
+    font-weight: 600 !important;
+    font-size: 0.8rem !important;
+    padding: 0.35rem 1rem !important;
+    transition: all 0.22s ease !important;
+    border: none !important;
+    width: 100% !important;
+}
+
+.stButton>button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 5px 16px rgba(0, 0, 0, 0.18) !important;
+    filter: brightness(1.08) !important;
+}
+
+/* Primary "Get Recommendations" button */
+section[data-testid="stSidebar"] .stButton>button {
+    background: linear-gradient(135deg, #667eea, #764ba2) !important;
+    color: white !important;
+    font-size: 1rem !important;
+    padding: 0.65rem 1.2rem !important;
+    box-shadow: 0 4px 14px rgba(118, 75, 162, 0.4) !important;
+}
+
+/*  Image thumbnails  */
+.stImage img {
+    border-radius: 7px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.1);
+}
+
+/*  Info / warning / error boxes  */
+div[data-testid="stAlert"] {
+    border-radius: 12px !important;
+}
+
+/*  XAI Explanation Box (Custom)  */
+.xai-box {
+    background: rgba(118, 75, 162, 0.15);
+    /* Soft purple glass */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(118, 75, 162, 0.3);
+    border-radius: 12px;
+    padding: 18px;
+    margin: 10px 0;
+    color: #ffffff !important;
+    font-size: 0.95rem;
+    line-height: 1.6;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.xai-box strong {
+    color: #ffffff !important;
+}
+
+/*  Expander  */
+details summary {
+    font-weight: 600;
+    color: #4c1d95;
+}
+
+/*  Divider  */
+hr {
+    border-color: #e9d8fd !important;
+    margin: 1.5rem 0 !important;
+}
